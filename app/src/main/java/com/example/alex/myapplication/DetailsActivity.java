@@ -20,18 +20,20 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_details);
         overridePendingTransition(
-                android.R.anim.slide_in_left,android.R.anim.slide_out_right
+                android.R.anim.slide_in_left, android.R.anim.slide_out_right
         );
-        Button button5 = findViewById(R.id.button5);
-
+        /*Button button5 = findViewById(R.id.button5);
         TextView detailsTextView = findViewById(R.id.textView_details);
         detailsTextView.setText(getIntent().getExtras().getString("ref"));
-
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+        */
+        BlankFragment blanckfragment =
+                BlankFragment.newInstance("Param1", "Param2");
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,blanckfragment).commit();
     }
 }
